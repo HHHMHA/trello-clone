@@ -1,12 +1,11 @@
 <template>
-  <component :is="route?.meta?.header ?? ''"></component>
+  <component :is="this.$route?.meta?.header ?? ''"></component>
   <RouterView />
-  <component :is="route?.meta?.footer ?? ''"></component>
+  <component :is="this.$route?.meta?.footer ?? ''"></component>
 </template>
 
 <script setup lang="ts">
-import { RouterLink, RouterView, useRouter } from 'vue-router'
-const route = useRouter()
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <style scoped></style>

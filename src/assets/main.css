@@ -1,1 +1,19 @@
 @import './base.css';
+
+.core-nav {
+    display: flex;
+    margin: 0 2em;
+}
+
+.core-nav__branding {
+    margin: 0 1em;
+}
+
+.core-nav__buttons {
+    display: flex;
+    padding: 0.5em;
+}
+
+.core-nav__trail {
+    margin: 0 auto;
+}
