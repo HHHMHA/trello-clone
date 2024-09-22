@@ -1,7 +1,7 @@
 <template>
-  <component :is="this.$route?.meta?.header ?? ''"></component>
+  <component :is="$route?.meta?.header ?? 'template'"></component>
   <RouterView />
-  <component :is="this.$route?.meta?.footer ?? ''"></component>
+  <component :is="$route?.meta?.footer ?? 'template'"></component>
 </template>
 
 <script setup lang="ts">
