@@ -4,8 +4,8 @@
         branding
     </div>
     <div class="core-nav__buttons">
-        <button>test</button>
-        <button>test</button>
+        <button class="core-nav__button active">test</button>
+        <button class="core-nav__button">test</button>
     </div>
     <div class="core-nav__trail">
         <input type="search" name="" id="">
