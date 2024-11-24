@@ -52,7 +52,7 @@
 .core-nav__button:hover {
     font-weight: bold;
     border: none;
-    transform: scale(1.05);
+    transform: scaleY(1.1);
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.2),
     inset 0 0 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
