@@ -25,6 +25,18 @@
 
 .core-nav__trail {
     margin-left: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.core-nav__trail a {
+    text-decoration: none;
+}
+
+.core-nav__trail input {
+    height: 80%;
 }
 
 .main-contents {
