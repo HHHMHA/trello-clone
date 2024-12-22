@@ -13,8 +13,8 @@
             <button class="core-nav__button">test</button>
         </div>
         <div class="core-nav__trail">
-            <a href="">test</a>
-            <a href="">test</a>
+            <a href="">Login</a>
+            <a href="">Register</a>
             <input type="search" name="" id="">
         </div>
     </nav>

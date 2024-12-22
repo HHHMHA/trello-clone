@@ -1,12 +1,14 @@
 .core-nav {
-    background: #f0f0f0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
     display: flex;
     margin: 0 auto;
     padding: 0.3rem 1rem;
     position: fixed;
     width: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 1rem 1rem;
+    z-index: 100;
 }
 
 .core-nav__branding {
@@ -32,11 +34,28 @@
 }
 
 .core-nav__trail a {
+    padding: 3px;
     text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.core-nav__trail a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+.core-nav__trail a:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .core-nav__trail input {
     height: 80%;
+    background: transparent;
+    border: solid rgba(0, 0, 0, 0.3) 1px;
+    outline: none;
+    color: var(--color-text);
 }
 
 .main-contents {
@@ -52,7 +71,8 @@
     /*border-right: 0.2px solid rgba(0, 0, 0, 0.2);*/
     /*box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);*/
     transition: all 0.3s ease;
-    padding: 0 0.5rem
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
 }
 
 .core-nav__button:active, .core-nav__button.active {
@@ -79,6 +99,8 @@
     transition: all 1s ease;
     transform: scale(1, 0) translateY(-50%);
     transform-origin: top;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 1rem 1rem;
 }
 
 .nav-menu.active {
@@ -89,8 +111,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0.5rem 1rem;
 }
 
 .nav-menu__links a {
     text-decoration: none;
+    color: var(--color-text);
 }
