@@ -1,8 +1,63 @@
+/* 🌟 Hamburger Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* 🌟 Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    padding: 1rem;
+    z-index: 150;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul .sidebar__btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+}
+
 .core-nav {
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px);
     display: flex;
-    margin: 0 auto;
+    align-items: center;
     padding: 0.3rem 1rem;
     position: fixed;
     width: 100%;
@@ -90,6 +145,11 @@
     transition: all 0.3s ease;
 }
 
+.sidebar__close {
+    width: 2rem;
+    flex: 0;
+}
+
 .nav-menu {
     width: 100%;
     text-align: center;
@@ -117,4 +177,24 @@
 .nav-menu__links a {
     text-decoration: none;
     color: var(--color-text);
+}
+
+/* 🌟 Hide Everything Except Branding & Hamburger on Mobile */
+@media (max-width: 767px) {
+    .core-nav__buttons,
+    .core-nav__trail,
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Hide Sidebar on Large Screens */
+@media (min-width: 768px) {
+    .sidebar {
+        display: none;
+    }
 }
