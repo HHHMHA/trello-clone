@@ -1,2 +1,5 @@
 @import './base.css';
-@import './core-nav.css';
+
+.main-contents {
+    padding-top: 4rem;
+}

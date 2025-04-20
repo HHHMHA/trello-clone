@@ -5,15 +5,15 @@
         </div>
         <!-- Hidden on mobile, shown on desktop -->
         <div class="core-nav__buttons hide-on-mobile">
-            <button class="core-nav__button menu-button" @click="toggleMenu($event, 0)">
+            <button class="core-nav__button menu-button" :class="{ 'active': showMenu }" @click="toggleMenu($event, 0)">
                 Plans
-                <svg fill="currentColor" height="8" viewBox="0 0 13 8" width="13" xmlns="http://www.w3.org/2000/svg">
+                <svg :style="{ transform: showMenu ? 'rotate(180deg)' : 'rotate(0deg)' }" fill="currentColor" height="8" viewBox="0 0 13 8" width="13" xmlns="http://www.w3.org/2000/svg">
                     <path d="m11.7305.59279c.3626.362629.3885.93447.0777 1.32699l-.0777.08722-4.99999 4.99999c-.36263.36263-.93446.38853-1.32697.0777l-.08725-.0777-4.999959-4.99997c-.3905249-.39052-.3905242-1.023685 0-1.414209.362629-.36263.934469-.388553 1.326989-.077728l.08722.077728 4.29292 4.292139 4.29284-4.29216c.3626-.36263.9345-.388532 1.327-.077707z"></path>
                 </svg>
             </button>
             <!--            <button class="core-nav__button">test</button>-->
         </div>
-        <div class="core-nav__trail">
+        <div class="core-nav__trail hide-on-mobile">
             <a href="">Login</a>
             <a href="">Register</a>
             <input type="search" name="search" placeholder="Search...">
@@ -28,9 +28,9 @@
   <!-- Sidebar Navigation for Mobile -->
     <div class="sidebar" :class="{ 'open': showSidebar }">
         <div class="sidebar-header">
-            <button class="core-nav__button sidebar__close" @click="toggleSidebar">✕</button>
+            <button class="sidebar__btn" @click="toggleSidebar">✕</button>
             <h2 v-if="!showSubMenu">Menu</h2>
-            <button class="core-nav__button" v-if="showSubMenu" @click="closeSubMenu">← Back</button>
+            <button class="sidebar__btn" v-if="showSubMenu" @click="closeSubMenu">← Back</button>
         </div>
 
         <!-- Main Sidebar Menu -->
@@ -80,12 +80,6 @@ const toggleSidebar = () => {
     showSubMenu.value = false; // Reset submenu when opening main sidebar
 
     showMenu.value = false;
-    const menuButtons = document.getElementsByClassName("menu-button");
-    for (let menuButton of menuButtons) {
-        menuButton.classList.remove("active")
-        const arrowIcon = menuButton.children[0];
-        arrowIcon.style = "transform: rotate(0)";
-    }
 };
 
 // Open Submenu
@@ -105,13 +99,9 @@ let showMenu = ref(false)
 const toggleMenu = (event, index) => {
     activeMenuIndex.value = index
     showMenu.value = !showMenu.value
-    const menuButton = event.target;
-    menuButton.classList.toggle("active")
-    const arrowIcon = menuButton.children[0]
-    arrowIcon.style = menuButton.classList.contains("active") ? "transform: rotate(180deg)" : "transform: rotate(0)";
 }
 </script>
 
 <style scoped>
-
+@import "@/assets/core-nav.scss";
 </style>
