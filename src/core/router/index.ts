@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import type {RouteRecordRaw} from 'vue-router';
-import type {CustomRouteMeta} from '@/types/router';
+import type {CustomRouteMeta} from '@/core/types/router';
 import CoreHeader from '@/core/layouts/CoreHeader.vue';
 
 const HomeView = () => import('@/core/views/HomeView.vue');
