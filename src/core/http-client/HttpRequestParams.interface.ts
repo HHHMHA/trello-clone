@@ -1,5 +1,5 @@
 export interface HttpRequestParamsInterface {
-    url: string,
-    requiresToken: boolean,
-    payload?: any,
+  url: string
+  requiresToken: boolean
+  payload?: any
 }

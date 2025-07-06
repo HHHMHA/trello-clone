@@ -1,7 +1,7 @@
 export interface Plan {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  isActive: boolean;
+  id: string
+  name: string
+  description: string
+  price: number
+  isActive: boolean
 }

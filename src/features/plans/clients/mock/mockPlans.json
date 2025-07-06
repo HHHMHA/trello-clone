@@ -1,0 +1,16 @@
+[
+  {
+    "id": "basic",
+    "name": "Basic Plan",
+    "description": "A basic plan",
+    "price": 10,
+    "isActive": true
+  },
+  {
+    "id": "pro",
+    "name": "Pro Plan",
+    "description": "A professional plan",
+    "price": 30,
+    "isActive": true
+  }
+]

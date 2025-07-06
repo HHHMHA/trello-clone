@@ -1,7 +1,7 @@
 <template>
   <component :is="$route?.meta?.header ?? 'template'"></component>
   <main class="main-contents">
-      <RouterView />
+    <RouterView />
   </main>
   <component :is="$route?.meta?.footer ?? 'template'"></component>
 </template>
