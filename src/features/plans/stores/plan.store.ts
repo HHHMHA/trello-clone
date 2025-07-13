@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
-import type { Plan } from '../plan'
+import {defineStore} from 'pinia'
+import {computed, ref} from 'vue'
+import type {Plan} from '../plan'
 import PlanClient from '@/features/plans/clients'
 
 export const usePlansStore = defineStore('plans', () => {

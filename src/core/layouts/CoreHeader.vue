@@ -56,8 +56,9 @@
     <div v-if="showSubMenu">
       <h2>Plans</h2>
       <ul v-show="activeMenuIndex == 0">
-        <li class="sidebar__btn"><a href="#">Standard</a></li>
-        <li class="sidebar__btn"><a href="#">Premium</a></li>
+        <li v-for="plan in sortedPlans" :key="plan.id" class="sidebar__btn">
+          <a href="#">{{ plan.name }}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -66,34 +67,33 @@
       <h1>Plans</h1>
       <hr />
       <div class="nav-menu__links">
-        <a href=""> Standard </a>
-        <a href=""> Premium </a>
+        <a v-for="plan in sortedPlans" :key="plan.id" href="#">
+          {{ plan.name }}
+        </a>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { usePlansStore } from '@/features/plans/stores/plan.store'
+import { storeToRefs } from 'pinia'
 
 let showSidebar = ref(false)
 let showSubMenu = ref(false)
 
-// Toggle Sidebar (For Mobile)
 const toggleSidebar = () => {
   showSidebar.value = !showSidebar.value
-  showSubMenu.value = false // Reset submenu when opening main sidebar
-
+  showSubMenu.value = false
   showMenu.value = false
 }
 
-// Open Submenu
 const openSubMenu = (index) => {
   showSubMenu.value = true
   activeMenuIndex.value = index
 }
 
-// Close Submenu (Back Button)
 const closeSubMenu = () => {
   showSubMenu.value = false
 }
@@ -105,6 +105,13 @@ const toggleMenu = (event, index) => {
   activeMenuIndex.value = index
   showMenu.value = !showMenu.value
 }
+
+const plansStore = usePlansStore()
+const { sortedPlans } = storeToRefs(plansStore)
+
+onMounted(() => {
+  plansStore.fetchPlans()
+})
 </script>
 
 <style scoped>
